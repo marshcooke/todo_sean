@@ -1,42 +1,66 @@
-# Name of Project
+# To Do App in SEAN stack
 
-One Paragraph of project description goes here. Link to the live version of the app if it's hosted on Heroku.
+This type of application is very common to tackle when learning a new language, which makes it extremely valuable to work through. Chances are good that at some point in your career you will tackle this again while learning another language.
+
+[ ] Create a front end experience (e.g. a form) that allows a user to create a Task. 
+
+[ ] When the Task is created, it should be stored inside of a database. 
+
+[ ] Whenever a Task is created, the front end should refresh to show all tasks that need to be completed. 
+
+[ ] Each Task should have an option to "Complete". 
+
+[ ] Each Task should have an option to "Delete". 
+
+[ ] When a Task is complete, its visual representation should change on the front end. (For example, the background of the task container could change from gray to green.) The complete option should be checked off. Each of these are accomplished in CSS, but will need to hook into logic to know whether or not the task is complete. 
+
+[ ] Whether or not a Task is complete should also be stored in the database. 
+
+[ ] Deleting a Task should remove it both from the front end as well as the database.
+
+[ ] Make sure that you also show us your best styling chops.
+
+[X] Include a database.sql file in your repo that includes CREATE TABLE queries.
+
+[ ] Adjust logic so that completed tasks are brought to the bottom of the page, where the remaining tasks left to complete are brought to the top of the list.
+
+[ ] In whatever fashion you would like, create an "are you sure: yes / no" option when deleting a task.
 
 ## Built With
 
-List technologies and frameworks here
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+PostgreSQL, Express, Angular, Node, JavaScript, Passport
 
 ### Prerequisites
 
-Link to software that is required to install the app (e.g. node).
-
 - [Node.js](https://nodejs.org/en/)
-- List other prerequisites here
-
 
 ### Installing
 
 Steps to get the development environment running.
 
 ```sql
-CREATE TABLE "users" (
-  "id" serial primary key,
-  "username" varchar(80) not null UNIQUE,
-  "password" varchar(240) not null
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY, 
+    username varchar(20) UNIQUE NOT NULL,
+    password varchar(200)
+);
+
+CREATE TABLE tasks (
+    id SERIAL PRIMARY KEY,
+    task varchar(30),
+    complete boolean
+);
+
+CREATE TABLE users_tasks (
+    users_id integer NOT NULL REFERENCES users,
+    tasks_id integer NOT NULL REFERENCES tasks,
+    PRIMARY KEY (users_id, tasks_id)
 );
 ```
 
 ## Screen Shot
 
-Include one or two screen shots of your project here (optional). Remove if unused.
-
-## Documentation
-
-Link to a read-only version of your scope document or other relevant documentation here (optional). Remove if unused.
+Include one or two screen shots of your project here (optional).
 
 ### Completed Features
 
@@ -57,9 +81,8 @@ Add additional notes about how to deploy this on a live system
 
 ## Authors
 
-* Name of author(s)
-
+* [Sarah Cooke](https://github.com/marshcooke)
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
+* Passport initial set up thanks to Prime instructors.
