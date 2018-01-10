@@ -66,8 +66,8 @@ Include one or two screen shots of your project here (optional).
 
 High level list of items completed.
 
-- [x] Feature a
-- [x] Feature b
+- [ ] Feature a
+- [ ] Feature b
 
 ### Next Steps
 
