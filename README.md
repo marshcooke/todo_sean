@@ -81,4 +81,4 @@ Add additional notes about how to deploy this on a live system
 
 ## Acknowledgments
 
-* Passport initial set up thanks to Prime instructors.
+* Passport integration and initial file structure set up thanks to Prime instructors.
