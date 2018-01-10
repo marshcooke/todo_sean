@@ -64,16 +64,12 @@ Include one or two screen shots of your project here (optional).
 
 ### Completed Features
 
-High level list of items completed.
-
-- [ ] Feature a
-- [ ] Feature b
-
-### Next Steps
-
-Features that you would like to add at some point in the future.
-
-- [ ] Feature c
+- [ ] User can create a task using the input field and button 
+- [ ] User can mark created tasks as complete or incomplete using respective buttons
+- [ ] User can delete created tasks whether complete or incomplete using the delete button
+- [ ] User's tasks are saved to a database and stored as indicated, complete or incomplete
+- [ ] When the user marks a task as incomplete, the task moves from the complete to incomplete section of the page 
+- [ ] When the user deletes a task, they are prompted with a confirmation of this action 
 
 ## Deployment
 
