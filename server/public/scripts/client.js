@@ -13,8 +13,8 @@ myApp.config(function ($routeProvider, $locationProvider) {
       templateUrl: '/views/templates/register.html',
       controller: 'LoginController as lc'
     })
-    .when('/user', {
-      templateUrl: '/views/templates/user.html',
+    .when('/home', {
+      templateUrl: '/views/templates/home.html',
       controller: 'UserController as uc',
       resolve: {
         getuser: function (UserService) {
