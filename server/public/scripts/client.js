@@ -5,8 +5,8 @@ myApp.config(function ($routeProvider, $locationProvider) {
   $locationProvider.hashPrefix('');
   console.log('myApp -- config')
   $routeProvider
-    .when('/home', {
-      templateUrl: '/views/templates/home.html',
+    .when('/login', {
+      templateUrl: '/views/templates/login.html',
       controller: 'LoginController as lc',
     })
     .when('/register', {
@@ -32,6 +32,6 @@ myApp.config(function ($routeProvider, $locationProvider) {
       }
     })
     .otherwise({
-      redirectTo: 'home'
+      redirectTo: 'login'
     });
 });
