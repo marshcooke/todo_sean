@@ -65,6 +65,10 @@ li {
   float: left;
 }
 
+li:last-child {
+  float: right;
+}
+
 li a {
   display: block;
   color: white;
@@ -73,8 +77,6 @@ li a {
   text-decoration: none;
 }
 
-/* Change the link color to #111 (black) on hover */
 li a:hover {
-  text-decoration: underline;
-  color: #eee;
+  color: #C6C2C2;
 }
