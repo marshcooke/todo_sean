@@ -24,7 +24,7 @@ myApp.config(function ($routeProvider, $locationProvider) {
     })
     .when('/info', {
       templateUrl: '/views/templates/doitall.html',
-      controller: 'InfoController',
+      controller: 'DoitController',
       resolve: {
         getuser: function (UserService) {
           return UserService.getuser();
