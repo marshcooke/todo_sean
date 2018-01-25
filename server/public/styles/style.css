@@ -80,3 +80,25 @@ li a {
 li a:hover {
   color: #C6C2C2;
 }
+
+#reg-login-header {
+  color: #F3EEFF;
+}
+
+#register-login {
+  background-color: #DEDCDC;
+  color: #333333;
+  padding: 15px; 
+}
+
+#register-cancel {
+  color: #333333;
+}
+
+.reg-log-form * {
+  margin-bottom: 4px;  
+}
+
+.reg-log-form input {
+  color: black;
+}
