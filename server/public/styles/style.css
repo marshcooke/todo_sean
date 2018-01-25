@@ -102,3 +102,8 @@ li a:hover {
 .reg-log-form input {
   color: black;
 }
+
+/* RECONFIGURE THIS TO PROPERLY ALIGN INPUTS ON REG-LOG */
+/* label {
+  width: 80px;
+} */
