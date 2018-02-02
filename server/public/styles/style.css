@@ -95,15 +95,15 @@ li a:hover {
   color: #333333;
 }
 
-/* .reg-log-form {
+.reg-log-form {
   display: inline-block;
-} */
+}
 
 .reg-log-form * {
   margin-bottom: 4px;  
 }
 
 /* RECONFIGURE THIS TO PROPERLY ALIGN INPUTS ON REG-LOG */
-/* label {
-  width: 150px;
-} */
+label {
+  width: 80px;
+}
