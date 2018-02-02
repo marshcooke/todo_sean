@@ -99,11 +99,11 @@ li a:hover {
   display: inline-block;
 }
 
-.reg-log-form * {
+/* .reg-log-form * {
   margin-bottom: 4px;  
-}
+} */
 
 /* RECONFIGURE THIS TO PROPERLY ALIGN INPUTS ON REG-LOG */
-label {
+/* label {
   width: 80px;
-}
+} */
