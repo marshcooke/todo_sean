@@ -15,7 +15,7 @@ myApp.config(function ($routeProvider, $locationProvider) {
     })
     .when('/home', {
       templateUrl: '/views/templates/home.html',
-      controller: 'UserController as uc',
+      controller: 'HomeController as hc',
       resolve: {
         getuser: function (UserService) {
           return UserService.getuser();
@@ -24,7 +24,7 @@ myApp.config(function ($routeProvider, $locationProvider) {
     })
     .when('/info', {
       templateUrl: '/views/templates/doitall.html',
-      controller: 'DoitController',
+      controller: 'DoitController as dc',
       resolve: {
         getuser: function (UserService) {
           return UserService.getuser();
