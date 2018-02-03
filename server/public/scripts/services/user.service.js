@@ -4,6 +4,7 @@ myApp.service('UserService', function ($http, $location) {
   var self = this;
 
   self.userObject = {};
+  self.allTasksObj = {task: []};
 
   self.getuser = function () {
     console.log('UserService -- getuser');
@@ -38,6 +39,16 @@ myApp.service('UserService', function ($http, $location) {
       data: [task]
     }).then(function(response) {
       console.log('post response is: ', response);
+    });
+  }
+
+  self.getTasks = function() {
+    $http({
+      method: 'GET',
+      url: '/home'
+    }).then(function(response) {
+      console.log('response is: ', response.data);
+      self.allTasksObj.task = response.data;
     });
   }
 
