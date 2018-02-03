@@ -1,10 +1,10 @@
 <div ng-include="'views/partials/nav.html'"></div>
-<div class="container">
+<div class="container" ng-init="hc.getTasks">
 
     <h1 id="welcome" class="lead">Ready to get shit done, {{hc.userObject.userName}}?!</h1>
     <div>
         <input id="todoInput" type="text" placeholder="Create a Task">
-        <button id="addButton">Add Task</button>
+        <button id="addButton" ng-click="hc.addTask(task);">Add Task</button>
     </div>
     <div>
         <h3>Incomplete Tasks</h3>
