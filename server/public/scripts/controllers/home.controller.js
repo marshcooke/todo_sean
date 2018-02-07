@@ -8,7 +8,7 @@ myApp.controller('HomeController', function(UserService) {
 
   vm.addTask = function(task) {
     UserService.addTask(task);
-    console.log('add task hit in hc)');
+    console.log('add task hit in hc');
   }
 
   vm.getTasks = function() {
