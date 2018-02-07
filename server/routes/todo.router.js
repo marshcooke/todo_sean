@@ -2,7 +2,7 @@ var router = require('express').Router();
 var pool = require('../modules/pool');
 var bodyParser = require('body-parser');
 
-router.get('/', function(req,res) {
+router.get('/', function (req, res) {
     if (req.isAuthenticated()) {
         console.log('user is logged in');
         console.log('in get / function');
