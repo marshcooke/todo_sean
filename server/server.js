@@ -31,7 +31,6 @@ app.use(passport.session());
 
 // Routes
 //      is this requirement needed for this router? 
-// app.use('/index', indexRouter);
 app.use('/register', registerRouter);
 app.use('/home', userRouter);
 app.use('/doitall', todoRouter);
