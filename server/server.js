@@ -30,7 +30,6 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Routes
-//      is this requirement needed for this router? 
 app.use('/register', registerRouter);
 app.use('/home', userRouter);
 app.use('/doitall', todoRouter);
