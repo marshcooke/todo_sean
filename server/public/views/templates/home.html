@@ -9,21 +9,26 @@
     <div>
         <h3>Incomplete Tasks</h3>
         <table>
-            <thead>
+            <tr>
                 <th>Tasks</th>
                 <th>Incomplete</th>
                 <th>Delete</th>
-            </thead>
+            </tr>
+            <tr ng-repeat="task in hc.allTasksObj.task">
+                <th>{{task.data}}</th>
+                <th>{{Incomplete}}</th>
+                <th>{{Delete}}</th>
+            </tr>
         </table>
     </div>
     <div>
         <h3>Complete Tasks</h3>
         <table>
-            <thead>
+            <tr>
                 <th>Tasks</th>
                 <th>Complete</th>
                 <th>Delete</th>
-            </thead>
+            </tr>
         </table>
     </div>
 </div>
