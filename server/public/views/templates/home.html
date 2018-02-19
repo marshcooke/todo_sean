@@ -14,9 +14,9 @@
                 <th>Delete</th>
             </tr>
             <tr ng-repeat="task in hc.allTasksObj.task">
-                <th>{{task.task}}</th>
-                <th>{{task.incomplete}}</th>
-                <th><button id="deleteButton" ng-click="hc.deleteTask(task);">Delete</button></th>
+                <td>{{task.task}}</td>
+                <td>{{task.incomplete}}</td>
+                <td><button id="deleteButton" ng-click="hc.deleteTask(task);">Delete</button></td>
             </tr>
         </table>
     </div>
@@ -26,8 +26,14 @@
             <tr>
                 <th>Tasks</th>
                 <th>Complete</th>
-                <th><button id="deleteButton" ng-click="hc.deleteTask(task);">Delete</button></th>
+                <th>Delete</th>
             </tr>
+            <tr>
+                <tr ng-repeat="task in hc.allTasksObj.task">
+                    <td>{{task.task}}</td>
+                    <td>{{task.incomplete}}</td>
+                    <td><button id="deleteButton" ng-click="hc.deleteTask(task);">Delete</button></td>
+                </tr>
         </table>
     </div>
 </div>
