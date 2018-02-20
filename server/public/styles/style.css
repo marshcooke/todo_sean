@@ -107,3 +107,7 @@ li a:hover {
 /* label {
   width: 80px;
 } */
+
+#todoInput {
+  text-align: center; 
+}
