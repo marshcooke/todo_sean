@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 
 // Handles Ajax request for user information if user is authenticated
 router.get('/', function (req, res) {
-    console.log('get /home route');
+    console.log('get /todo route');
     // check if logged in
     if (req.isAuthenticated()) {
       // send back user object from database
@@ -29,4 +29,5 @@ router.get('/', function (req, res) {
     res.sendStatus(200);
   });
 
+  
 module.exports = router;
