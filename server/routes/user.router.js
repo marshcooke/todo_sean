@@ -38,7 +38,7 @@ router.get('/', function (req, res) {
         console.log(connectionError);
         res.sendStatus(500);
       } else {
-        client.query('SELECT * FROM users_tasks INNER JOIN tasks ON users_tasks.tasks_id = tasks.id WHERE users.id = $1;', [userId], function (queryError, resultsObj) {
+        client.query('SELECT * FROM users_tasks INNER JOIN tasks ON users_tasks.tasks_id = tasks.id WHERE users_id = $1;', [userId], function (queryError, resultsObj) {
           done();
           if (queryError) {
             console.log(queryError);
