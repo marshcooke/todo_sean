@@ -31,13 +31,14 @@ router.get('/logout', function (req, res) {
 router.get('/', function (req, res) {
   if (req.isAuthenticated()) {
     console.log('user is logged in');
-    console.log('in get / function');
+    var userId = req.user.id;
+    console.log('user id?', userId);
     pool.connect(function (connectionError, client, done) {
       if (connectionError) {
         console.log(connectionError);
         res.sendStatus(500);
       } else {
-        client.query('SELECT * FROM tasks', function (queryError, resultsObj) {
+        client.query('SELECT * FROM users_tasks INNER JOIN tasks ON users_tasks.tasks_id = tasks.id WHERE users_id = $1;', [userId], function (queryError, resultsObj) {
           done();
           if (queryError) {
             console.log(queryError);
