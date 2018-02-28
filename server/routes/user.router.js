@@ -1,6 +1,7 @@
 var express = require('express');
 var pool = require('../modules/pool');
 var router = express.Router();
+var bodyParser = require('body-parser');
 
 // Handles Ajax request for user information if user is authenticated
 router.get('/', function (req, res) {
@@ -61,14 +62,14 @@ router.post('/', function (req, res) {
   if (req.isAuthenticated()) {
     console.log('user is logged in', req.user);
     var userId = req.user.id;
-    var tasksId = req.body.tasks;
+    var tasksId = req.body;
     console.log('in post / function, req.body: ', req.body);
     pool.connect(function (connectionError, client, done) {
       if (connectionError) {
         console.log(connectionError);
         res.sendStatus(500);
       } else {
-        var queryString = 'INSTERT INTO users_tasks (users_id, tasks_id) VALUES ($1, $2) RETURNING tasks_id;';
+        var queryString = 'INSERT INTO users_tasks (users_id, tasks_id) VALUES ($1, $2) RETURNING tasks_id;';
         var values = [userId, tasksId];
         client.query(queryString, values, function (queryError, resultsObj) {
           done();
