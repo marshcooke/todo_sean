@@ -1,4 +1,5 @@
 var express = require('express');
+var pool = require('../modules/pool');
 var router = express.Router();
 
 // Handles Ajax request for user information if user is authenticated
@@ -60,7 +61,7 @@ router.post('/', function (req, res) {
   if (req.isAuthenticated()) {
     console.log('user is logged in', req.user);
     var userId = req.user.id;
-    var tasksId = req.body[0].id;
+    var tasksId = req.body.task;
     console.log('in post / function, req.body: ', req.body);
     pool.connect(function (connectionError, client, done) {
       if (connectionError) {
