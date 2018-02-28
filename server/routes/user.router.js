@@ -68,7 +68,7 @@ router.post('/', function (req, res) {
         console.log(connectionError);
         res.sendStatus(500);
       } else {
-        var queryString = 'INSTERT INTO users_tasks (users_id, tasks_id) VALUES ($1, $2) RETURNING tasks.id;';
+        var queryString = 'INSTERT INTO users_tasks (users_id, tasks_id) VALUES ($1, $2) RETURNING tasks_id;';
         var values = [userId, tasksId];
         client.query(queryString, values, function (queryError, resultsObj) {
           done();
