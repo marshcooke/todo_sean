@@ -2,8 +2,8 @@
 <div class="container" ng-init="hc.getTasks()">
     <h1 id="welcome" class="lead">Ready to get shit done, {{hc.userObject.userName}}?!</h1>
     <div id="todoInput">
-        <input id="todoInput" type="text" placeholder="Create a Task">
-        <button id="addButton" ng-click="hc.addTask(task);">Add Task</button>
+        <input id="todoInput" type="text" ng-model="hc.task" placeholder="Create a Task">
+        <button id="addButton" ng-click="hc.addTask(hc.task);">Add Task</button>
     </div>
     <div>
         <h3>Incomplete Tasks</h3>
