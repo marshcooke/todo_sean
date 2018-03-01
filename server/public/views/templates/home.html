@@ -2,7 +2,7 @@
 <div class="container" ng-init="hc.getTasks()">
     <h1 id="welcome" class="lead">Ready to get shit done, {{hc.userObject.userName}}?!</h1>
     <div id="todoInput">
-        <input id="todoInput" type="text" ng-model="hc.task" placeholder="Create a Task">
+        <input id="todoLabel" type="text" ng-model="hc.task" placeholder="Create a Task">
         <button id="addButton" ng-click="hc.addTask(hc.task);">Add Task</button>
     </div>
     <div>

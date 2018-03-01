@@ -111,3 +111,7 @@ li a:hover {
 #todoInput {
   text-align: center; 
 }
+
+#todoLabel {
+  width: 150px;
+}
