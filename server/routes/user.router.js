@@ -40,6 +40,7 @@ router.get('/', function (req, res) {
         console.log(connectionError);
         res.sendStatus(500);
       } else {
+        // REDO THIS QUERY TO EFFECTIVELY DISPLAY DATA ON THE DOM BEFORE FIXING THE ADDTASK!
         client.query('SELECT * FROM users_tasks INNER JOIN tasks ON users_tasks.tasks_id = tasks.id WHERE users_id = $1;', [userId], function (queryError, resultsObj) {
           done();
           if (queryError) {
