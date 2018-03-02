@@ -13,7 +13,7 @@ myApp.controller('HomeController', function (UserService) {
 
   vm.getTasks = function () {
     UserService.getTasks();
-    console.log('tasks: ', vm.allTasksObj)
+    console.log('tasks: ', vm.allTasksObj);
   }
 
 });
