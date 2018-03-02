@@ -30,7 +30,7 @@ router.get('/logout', function (req, res) {
   res.sendStatus(200);
 });
 
-router.get('/', function (req, res) {
+router.get('/home', function (req, res) {
   if (req.isAuthenticated()) {
     console.log('user is logged in');
     var userId = req.user.id;
@@ -58,7 +58,7 @@ router.get('/', function (req, res) {
   }
 });
 
-router.post('/', function (req, res) {
+router.post('/home', function (req, res) {
   if (req.isAuthenticated()) {
     console.log('user is logged in', req.user);
     var userId = req.user.id;
