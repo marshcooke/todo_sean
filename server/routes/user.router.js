@@ -30,9 +30,9 @@ router.get('/logout', function (req, res) {
   res.sendStatus(200);
 });
 
-router.get('/', function (req, res) {
+router.get('/home', function (req, res) {
   if (req.isAuthenticated()) {
-    console.log('user is logged in');
+    console.log('user is logged in with GET ROUTE user router');
     var userId = req.user.id;
     console.log('user id?', userId);
     pool.connect(function (connectionError, client, done) {
@@ -40,7 +40,7 @@ router.get('/', function (req, res) {
         console.log(connectionError);
         res.sendStatus(500);
       } else {
-        client.query('SELECT * FROM users_tasks LEFT JOIN tasks ON users_tasks.tasks_id = tasks.id WHERE users_id = $1;', [userId], function (queryError, resultsObj) {            
+        client.query('SELECT * FROM users_tasks INNER JOIN tasks ON users_tasks.tasks_id = tasks.id WHERE users_id = $1;', [userId], function (queryError, resultsObj) {            
           done();
           if (queryError) {
             console.log(queryError);
