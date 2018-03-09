@@ -50,7 +50,8 @@ myApp.service('UserService', function ($http, $location) {
       url: '/home'
     }).then(function (response) {
       console.log('response is: ', response);
-      self.allTasksObj.task = response.data;
+      self.allTasksObj.task = response.data.rows;
+      console.log('response.data.data: ', self.allTasksObj.task)
     });
   }
 
