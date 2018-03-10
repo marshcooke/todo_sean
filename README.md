@@ -28,7 +28,7 @@ This type of application is very common to tackle when learning a new language, 
 
 ## Built With
 
-PostgreSQL, Express, Angular, Node, JavaScript, Passport
+PostgreSQL, Express, Angular, Node, JavaScript, Passport, Font Awesome Icons
 
 ### Prerequisites
 
