@@ -45,7 +45,7 @@ myApp.service('UserService', function ($http, $location) {
   }
 
   self.getTasks = function () {
-    console.log('In getTasks');    
+    console.log('In getTasks');
     $http({
       method: 'GET',
       url: '/home'
