@@ -48,11 +48,12 @@ myApp.service('UserService', function ($http, $location) {
     console.log('In getTasks');    
     $http({
       method: 'GET',
-      url: '/home'
+      url: '/home/home'
     }).then(function (response) {
       console.log('response is: ', response);
-      self.allTasksObj.task = response.data.rows;
-      console.log('response.data.rows: ', self.allTasksObj.task)
+      console.log(response.data)
+      self.allTasksObj.task = response.data;
+      console.log('response.data: ', self.allTasksObj.task)
     });
   }
 
