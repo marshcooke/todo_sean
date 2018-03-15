@@ -34,16 +34,6 @@ myApp.service('UserService', function ($http, $location) {
     });
   }
 
-  self.addTask = function (task) {
-    $http({
-      method: 'POST',
-      url: '/home',
-      data: [task]
-    }).then(function (response) {
-      console.log('post response is: ', response);
-    });
-  }
-
   self.getTasks = function () {
     console.log('In getTasks');
     $http({
@@ -53,6 +43,16 @@ myApp.service('UserService', function ($http, $location) {
       console.log('response is: ', response);
       self.allTasksObj.task = response.data;
       console.log('response.data: ', self.allTasksObj.task)
+    });
+  }
+
+  self.addTask = function (task) {
+    $http({
+      method: 'POST',
+      url: '/home',
+      data: [task]
+    }).then(function (response) {
+      console.log('post response is: ', response);
     });
   }
 

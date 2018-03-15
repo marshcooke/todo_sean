@@ -7,14 +7,14 @@ myApp.controller('HomeController', function (UserService) {
 
   vm.allTasksObj = UserService.allTasksObj;
 
-  vm.addTask = function (task) {
-    UserService.addTask(task);
-    console.log('add task hit in hc');
-  }
-
   vm.getTasks = function () {
     UserService.getTasks();
     console.log('tasks: ', vm.allTasksObj);
+  }
+
+  vm.addTask = function (task) {
+    UserService.addTask(task);
+    console.log('add task hit in hc');
   }
 
 });
