@@ -51,10 +51,19 @@ myApp.service('UserService', function ($http, $location) {
       url: '/home/home'
     }).then(function (response) {
       console.log('response is: ', response);
-      console.log(response.data)
       self.allTasksObj.task = response.data;
       console.log('response.data: ', self.allTasksObj.task)
     });
   }
 
+  self.deleteTasks = function () {
+    console.log('In deleteTasks');
+    $http({
+      method: 'DELETE',
+      url: '/home/' + task,
+    }).then(function (response){
+      console.log('response is: ', response.data);
+    });
+  }
+  
 });
