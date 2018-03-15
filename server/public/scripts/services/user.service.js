@@ -45,7 +45,7 @@ myApp.service('UserService', function ($http, $location) {
   }
 
   self.getTasks = function () {
-    console.log('In getTasks');    
+    console.log('In getTasks');
     $http({
       method: 'GET',
       url: '/home/home'
@@ -61,9 +61,9 @@ myApp.service('UserService', function ($http, $location) {
     $http({
       method: 'DELETE',
       url: '/home/' + task,
-    }).then(function (response){
+    }).then(function (response) {
       console.log('response is: ', response.data);
     });
   }
-  
+
 });
