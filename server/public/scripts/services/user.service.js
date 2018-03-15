@@ -56,14 +56,14 @@ myApp.service('UserService', function ($http, $location) {
     });
   }
 
-  self.deleteTasks = function () {
-    console.log('In deleteTasks');
-    $http({
-      method: 'DELETE',
-      url: '/home/' + task,
-    }).then(function (response) {
-      console.log('response is: ', response.data);
-    });
-  }
+  // self.deleteTasks = function () {
+  //   console.log('In deleteTasks');
+  //   $http({
+  //     method: 'DELETE',
+  //     url: '/home/' + task,
+  //   }).then(function (response) {
+  //     console.log('response is: ', response.data);
+  //   });
+  // }
 
 });
