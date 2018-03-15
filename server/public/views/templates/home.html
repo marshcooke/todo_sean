@@ -10,12 +10,10 @@
         <table>
             <tr>
                 <th>Tasks</th>
-                <th>Incomplete</th>
                 <th></th>
             </tr>
             <tr ng-repeat="task in hc.allTasksObj.task | filter:true">
                 <td>{{task.task}}</td>
-                <td></td>
                 <td><button id="deleteButton" ng-click="hc.deleteTask(task);">Delete</button></td>
             </tr>
         </table>
@@ -25,13 +23,11 @@
         <table>
             <tr>
                 <th>Tasks</th>
-                <th>Complete</th>
                 <th></th>
             </tr>
             <tr>
                 <tr ng-repeat="task in hc.allTasksObj.task | filter:false">
                     <td>{{task.task}}</td>
-                    <td></td>
                     <td><button id="deleteButton" ng-click="hc.deleteTask(task);">Delete</button></td>
                 </tr>
         </table>
