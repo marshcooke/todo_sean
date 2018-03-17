@@ -53,7 +53,6 @@ myApp.service('UserService', function ($http, $location) {
       data: [task]
     }).then(function (response) {
       console.log('post response is: ', response);
-      console.log('post response.data: ', response.data);
     });
   }
 
