@@ -62,8 +62,8 @@ router.post('/home', function (req, res) {
   if (req.isAuthenticated()) {
     console.log('user is logged in', req.user);
     var userId = req.user.id;
-    var tasksId = req.body.id;
-    console.log('in post / function, req.body: ', userId, tasksId);
+    var tasksId = req.body[0].id;
+    console.log('in post / function userId, tasksId: ', userId, tasksId);
     pool.connect(function (connectionError, client, done) {
       if (connectionError) {
         console.log(connectionError);

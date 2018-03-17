@@ -42,7 +42,6 @@ myApp.service('UserService', function ($http, $location) {
     }).then(function (response) {
       console.log('response is: ', response);
       self.allTasksObj.task = response.data;
-      console.log('response.data: ', self.allTasksObj.task)
     });
   }
 
