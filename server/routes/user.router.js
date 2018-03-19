@@ -61,6 +61,11 @@ router.get('/home', function (req, res) {
 router.post('/', function (req, res) {
   if (req.isAuthenticated()) {
     console.log('user is logged in in router.post', req.user);
+    var newTask = {
+      task: req.body.task,
+      complete: req.body.complete
+    };
+    console.log('new task: ', newTask);
     var userId = req.user.id;
     var tasksId = req.body[0];
     console.log('in post function userId, tasksId: ', userId, tasksId);
@@ -69,12 +74,12 @@ router.post('/', function (req, res) {
         console.log(connectionError);
         res.sendStatus(500);
       } else {
-        var queryString = 'INSERT INTO users_tasks (users_id, tasks_id) VALUES ($1, $2) RETURNING tasks_id;';
-        var values = [userId, tasksId];
+        var queryString = 'INSERT INTO tasks (task, complete) VALUES ($1, true) WHERE users_tasks (users_id, tasks_id) RETURNING id;';
+        var values = [newTask.task, newTask.complete];
         client.query(queryString, values, function (queryError, resultsObj) {
           done();
           if (queryError) {
-            console.log(queryError);
+            console.log('error witht THE POST: ', queryError);
             res.sendStatus(500);
           } else {
             console.log('resultsObj: ', resultsObj);
