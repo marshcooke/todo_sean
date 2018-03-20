@@ -59,7 +59,7 @@ myApp.service('UserService', function ($http, $location) {
       url: '/',
       data: [task]
     }).thent(function(response) {
-      console.log('update response is: ', response);
+      console.log('incomplete update response is: ', response);
     });
   }
   
