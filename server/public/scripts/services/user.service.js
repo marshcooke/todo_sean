@@ -53,6 +53,16 @@ myApp.service('UserService', function ($http, $location) {
     });
   }
 
+  self.incompleteTask = function(task) {
+    $http({
+      method: 'UPDATE',
+      url: '/',
+      data: [task]
+    }).thent(function(response) {
+      console.log('update response is: ', response);
+    });
+  }
+
   // self.deleteTasks = function () {
   //   console.log('In deleteTasks');
   //   $http({
