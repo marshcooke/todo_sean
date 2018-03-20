@@ -62,6 +62,16 @@ myApp.service('UserService', function ($http, $location) {
       console.log('update response is: ', response);
     });
   }
+  
+  self.completeTask = function(task) {
+    $http({
+      method: 'UPDATE',
+      url: '/',
+      data: [task]
+    }).thent(function(response) {
+      console.log('complete update response is: ', response);
+    });
+  }
 
   // self.deleteTasks = function () {
   //   console.log('In deleteTasks');
