@@ -4,7 +4,9 @@ myApp.service('UserService', function ($http, $location) {
   var self = this;
 
   self.userObject = {};
-  self.allTasksObj = { task: [] };
+  self.allTasksObj = {
+    task: []
+  };
 
   self.getuser = function () {
     console.log('UserService -- getuser');
@@ -53,22 +55,22 @@ myApp.service('UserService', function ($http, $location) {
     });
   }
 
-  self.incompleteTask = function(task) {
+  self.incompleteTask = function (task) {
     $http({
       method: 'UPDATE',
       url: '/',
       data: [task]
-    }).thent(function(response) {
+    }).thent(function (response) {
       console.log('incomplete update response is: ', response);
     });
   }
-  
-  self.completeTask = function(task) {
+
+  self.completeTask = function (task) {
     $http({
       method: 'UPDATE',
       url: '/',
       data: [task]
-    }).thent(function(response) {
+    }).thent(function (response) {
       console.log('complete update response is: ', response);
     });
   }
