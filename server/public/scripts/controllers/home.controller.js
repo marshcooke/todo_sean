@@ -19,7 +19,7 @@ myApp.controller('HomeController', function (UserService) {
   }
 
   vm.incompleteTask = function (task) {
-    UserService.incompletetTask(task);
+    UserService.incompleteTask(task);
     console.log('change from incomplete to complete');
     vm.getTasks();
   }
