@@ -9,7 +9,6 @@ var sessionConfig = require('./modules/session.config');
 var indexRouter = require('./routes/index.router');
 var userRouter = require('./routes/user.router');
 var registerRouter = require('./routes/register.router');
-var todoRouter = require('./routes/todo.router');
 
 var port = process.env.PORT || 5556;
 
@@ -32,7 +31,6 @@ app.use(passport.session());
 // Routes
 app.use('/register', registerRouter);
 app.use('/home', userRouter);
-app.use('/doitall', todoRouter);
 
 // Catch all bucket, must be last!
 app.use('/', indexRouter);
