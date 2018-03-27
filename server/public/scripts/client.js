@@ -22,15 +22,6 @@ myApp.config(function ($routeProvider, $locationProvider) {
         }
       }
     })
-    .when('/info', {
-      templateUrl: '/views/templates/doitall.html',
-      controller: 'DoitController as dc',
-      resolve: {
-        getuser: function (UserService) {
-          return UserService.getuser();
-        }
-      }
-    })
     .otherwise({
       redirectTo: 'login'
     });
