@@ -29,7 +29,7 @@
             <tr>
                 <tr ng-repeat="task in hc.allTasksObj.task | filter:false">
                     <td>{{task.task}}</td>
-                    <td><button id="completeButton" ng-click="hc.completeTask(task)">Incomplete</button></td>                    
+                    <td><button id="completeButton" ng-click="hc.completeTask(task)">Incomplete</button></td>
                     <td><button id="deleteButton" ng-click="hc.deleteTask(task);">Delete</button></td>
                 </tr>
         </table>
