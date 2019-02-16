@@ -1,5 +1,4 @@
 myApp.controller('LoginController', function ($http, $location, UserService) {
-  console.log('LoginController created');
   var vm = this;
 
   vm.user = {
@@ -9,7 +8,6 @@ myApp.controller('LoginController', function ($http, $location, UserService) {
   vm.message = '';
 
   vm.login = function () {
-    console.log('LoginController -- login');
     if (vm.user.username === '' || vm.user.password === '') {
       vm.message = "Enter your username & password!";
     } else {
