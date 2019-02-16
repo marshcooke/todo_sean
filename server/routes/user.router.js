@@ -79,7 +79,7 @@ router.post('/', function (req, res) {
         client.query(queryString, values, function (queryError, resultsObj) {
           done();
           if (queryError) {
-            console.log('error witht THE POST: ', queryError);
+            console.log('error with THE POST: ', queryError);
             res.sendStatus(500);
           } else {
             console.log('resultsObj: ', resultsObj);
