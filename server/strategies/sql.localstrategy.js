@@ -8,7 +8,6 @@ passport.serializeUser(function(user, done) {
 });
 
 passport.deserializeUser(function(id, done) {
-  console.log('called deserializeUser - pg');
 
   pool.connect(function (err, client, release) {
     if(err) {
