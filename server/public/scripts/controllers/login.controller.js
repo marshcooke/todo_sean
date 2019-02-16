@@ -29,7 +29,6 @@ myApp.controller('LoginController', function ($http, $location, UserService) {
   };
 
   vm.registerUser = function () {
-    console.log('LoginController -- registerUser');
     if (vm.user.username === '' || vm.user.password === '') {
       vm.message = "Choose a username and password!";
     } else {

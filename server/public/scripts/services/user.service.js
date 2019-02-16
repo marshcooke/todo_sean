@@ -1,5 +1,4 @@
 myApp.service('UserService', function ($http, $location) {
-  console.log('UserService Loaded');
 
   var self = this;
 
@@ -9,7 +8,6 @@ myApp.service('UserService', function ($http, $location) {
   };
 
   self.getuser = function () {
-    console.log('UserService -- getuser');
     $http.get('/home').then(function (response) {
       if (response.data.username) {
         // user has a curret session on the server
@@ -27,7 +25,6 @@ myApp.service('UserService', function ($http, $location) {
   }
 
   self.logout = function () {
-    console.log('UserService -- logout');
     $http.get('/home/logout').then(function (response) {
       console.log('UserService -- logout -- logged out');
       $location.path("/login");
