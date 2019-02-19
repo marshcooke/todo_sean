@@ -26,7 +26,7 @@ myApp.controller('HomeController', function (UserService) {
 
   vm.completeTask = function (task) {
     UserService.completeTask(task);
-    console.log('chnage from complete to incomplete');
+    console.log('change from complete to incomplete');
     vm.getTasks();
   }
 
