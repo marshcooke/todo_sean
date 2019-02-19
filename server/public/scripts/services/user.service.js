@@ -55,7 +55,7 @@ myApp.service('UserService', function ($http, $location) {
   self.incompleteTask = function (task) {
     $http({
       method: 'UPDATE',
-      url: '/',
+      url: '/home/' + task,
       data: [task]
     }).thent(function (response) {
       console.log('incomplete update response is: ', response);
@@ -65,7 +65,7 @@ myApp.service('UserService', function ($http, $location) {
   self.completeTask = function (task) {
     $http({
       method: 'UPDATE',
-      url: '/',
+      url: '/home/' + task,
       data: [task]
     }).thent(function (response) {
       console.log('complete update response is: ', response);
