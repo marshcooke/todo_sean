@@ -3,9 +3,7 @@ myApp.service('UserService', function ($http, $location) {
   var self = this;
 
   self.userObject = {};
-  self.allTasksObj = {
-    task: []
-  };
+  self.allTasksObj = { task: [] };
 
   self.getuser = function () {
     $http.get('/home').then(function (response) {
@@ -37,7 +35,7 @@ myApp.service('UserService', function ($http, $location) {
       method: 'GET',
       url: '/home/home'
     }).then(function (response) {
-      console.log('response is: ', response);
+      console.log('response is: ', response.data);
       self.allTasksObj.task = response.data;
     });
   }
@@ -72,11 +70,11 @@ myApp.service('UserService', function ($http, $location) {
     });
   }
 
-  self.deleteTasks = function () {
+  self.deleteTasks = function (task) {
     console.log('In deleteTasks');
     $http({
       method: 'DELETE',
-      url: '/home',
+      url: '/home/' + task,
     }).then(function (response) {
       console.log('response is: ', response.data);
     });
