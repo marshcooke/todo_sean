@@ -32,7 +32,6 @@ router.get('/logout', function (req, res) {
 
 router.get('/home', function (req, res) {
   if (req.isAuthenticated()) {
-    console.log('user is logged in with GET ROUTE user router');
     var userId = req.user.id;
     console.log('user id?', userId);
     pool.connect(function (connectionError, client, done) {
@@ -60,7 +59,6 @@ router.get('/home', function (req, res) {
 
 router.post('/', function (req, res) {
   if (req.isAuthenticated()) {
-    console.log('user is logged in in router.post', req.user);
     var newTask = {
       task: req.body.task,
       complete: req.body.complete
@@ -96,7 +94,6 @@ router.post('/', function (req, res) {
 
 router.delete('/:id', function (req, res) {
   if (req.isAuthenticated()) {
-    console.log('user is logged in', req.user);
     var userId = req.user.id;
     var taskId = req.params.id;
     console.log('in delete / function, req. params: ', req.params.id);
