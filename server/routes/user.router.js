@@ -9,14 +9,14 @@ router.get('/', function (req, res) {
   // check if logged in
   if (req.isAuthenticated()) {
     // send back user object from database
-    console.log('logged in', req.user);
+    // console.log('logged in', req.user);
     var userInfo = {
       username: req.user.username
     };
     res.send(userInfo);
   } else {
     // failure best handled on the server. do redirect here.
-    console.log('not logged in');
+    // console.log('not logged in');
     // should probably be res.sendStatus(403) and handled client-side, esp if this is an AJAX request (which is likely with AngularJS)
     res.send(false);
   }
@@ -33,7 +33,7 @@ router.get('/logout', function (req, res) {
 router.get('/home', function (req, res) {
   if (req.isAuthenticated()) {
     var userId = req.user.id;
-    console.log('user id?', userId);
+    // console.log('user id?', userId);
     pool.connect(function (connectionError, client, done) {
       if (connectionError) {
         console.log(connectionError);
@@ -45,7 +45,7 @@ router.get('/home', function (req, res) {
             console.log(queryError);
             res.sendStatus(500);
           } else {
-            console.log('resultsObj.rows: ', resultsObj.rows);
+            // console.log('resultsObj.rows: ', resultsObj.rows);
             res.send(resultsObj.rows);
           }
         });
@@ -59,21 +59,27 @@ router.get('/home', function (req, res) {
 
 router.post('/', function (req, res) {
   if (req.isAuthenticated()) {
+    var userId = req.user.id;
+    var tasksId = req.body.id;
     var newTask = {
-      task: req.body.task,
+      task: req.body[0].id,
       complete: req.body.complete
     };
     console.log('new task: ', newTask);
-    var userId = req.user.id;
-    var tasksId = req.body[0];
-    console.log('in post function userId, tasksId: ', userId, tasksId);
+    console.log('in post / function, req.body: ', req.body);
+    console.log('in post function userId: ',userId, 'tasksId: ', tasksId);
     pool.connect(function (connectionError, client, done) {
       if (connectionError) {
         console.log(connectionError);
         res.sendStatus(500);
       } else {
         var queryString = 'INSERT INTO tasks (task, complete) VALUES ($1, true) WHERE users_tasks (users_id, tasks_id) RETURNING id;';
-        var values = [newTask.task, newTask.complete];
+        // var newTask = {
+        //   task: req.body.task,
+        //   complete: req.body.complete
+        // };
+        // console.log('new task: ', newTask);
+        var values = [userId, tasksId];
         client.query(queryString, values, function (queryError, resultsObj) {
           done();
           if (queryError) {
