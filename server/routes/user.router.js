@@ -60,12 +60,12 @@ router.get('/home', function (req, res) {
 router.post('/', function (req, res) {
   if (req.isAuthenticated()) {
     var userId = req.user.id;
-    var tasksId = req.body.id;
-    var newTask = {
-      task: req.body[0].id,
-      complete: req.body.complete
-    };
-    console.log('new task: ', newTask);
+    var tasksId = req.body[0].id;
+    // var newTask = {
+    //   task: req.body[0].id,
+    //   complete: req.body.complete
+    // };
+    // console.log('new task: ', newTask);
     console.log('in post / function, req.body: ', req.body);
     console.log('in post function userId: ',userId, 'tasksId: ', tasksId);
     pool.connect(function (connectionError, client, done) {
