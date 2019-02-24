@@ -67,13 +67,13 @@ router.post('/', function (req, res) {
     // };
     // console.log('new task: ', newTask);
     console.log('in post / function, req.body: ', req.body);
-    console.log('in post function userId: ',userId, 'tasksId: ', tasksId);
+    // console.log('in post function userId: ',userId, 'tasksId: ', tasksId);
     pool.connect(function (connectionError, client, done) {
       if (connectionError) {
         console.log(connectionError);
         res.sendStatus(500);
       } else {
-        var queryString = 'INSERT INTO tasks (task, complete) VALUES ($1, true) WHERE users_tasks (users_id, tasks_id) RETURNING id;';
+        var queryString = 'INSERT INTO users_tasks (users_id, tasks_id) VALUES ($1, $2) RETURNING tasks_id;';
         // var newTask = {
         //   task: req.body.task,
         //   complete: req.body.complete
