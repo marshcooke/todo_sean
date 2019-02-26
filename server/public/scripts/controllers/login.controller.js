@@ -11,10 +11,10 @@ myApp.controller('LoginController', function ($http, $location, UserService) {
     if (vm.user.username === '' || vm.user.password === '') {
       vm.message = "Enter your username & password!";
     } else {
-      console.log('LoginController -- login -- sending to server: ', vm.user.username);
+      // console.log('LoginController -- login -- sending to server: ', vm.user.username);
       $http.post('/', vm.user).then(function (response) {
         if (response.data.username) {
-          console.log('LoginController -- login -- success: ', response.data.username);
+          // console.log('LoginController -- login -- success: ', response.data.username);
           // location works with SPA (ng-route)
           $location.path('/home'); // http://localhost:5556/#/home
         } else {
