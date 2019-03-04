@@ -50,34 +50,34 @@ myApp.service('UserService', function ($http, $location) {
     });
   }
 
-  self.incompleteTask = function (task) {
-    $http({
-      method: 'UPDATE',
-      url: '/home/' + task,
-      data: [task]
-    }).thent(function (response) {
-      console.log('incomplete update response is: ', response);
-    });
-  }
+  // self.incompleteTask = function (task) {
+  //   $http({
+  //     method: 'UPDATE',
+  //     url: '/home/' + task,
+  //     data: [task]
+  //   }).thent(function (response) {
+  //     console.log('incomplete update response is: ', response);
+  //   });
+  // }
 
-  self.completeTask = function (task) {
-    $http({
-      method: 'UPDATE',
-      url: '/home',
-      data: [task]
-    }).thent(function (response) {
-      console.log('complete update response is: ', response);
-    });
-  }
+  // self.completeTask = function (task) {
+  //   $http({
+  //     method: 'UPDATE',
+  //     url: '/home',
+  //     data: [task]
+  //   }).thent(function (response) {
+  //     console.log('complete update response is: ', response);
+  //   });
+  // }
 
-  self.deleteTasks = function (task) {
-    console.log('In deleteTasks');
-    $http({
-      method: 'DELETE',
-      url: '/home/' + task,
-    }).then(function (response) {
-      console.log('response is: ', response.data);
-    });
-  }
+  // self.deleteTasks = function (task) {
+  //   console.log('In deleteTasks');
+  //   $http({
+  //     method: 'DELETE',
+  //     url: '/home/' + task,
+  //   }).then(function (response) {
+  //     console.log('response is: ', response.data);
+  //   });
+  // }
 
 });
