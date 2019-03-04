@@ -58,10 +58,6 @@ CREATE TABLE users_tasks (
 );
 ```
 
-## Screen Shot
-
-Include one or two screen shots of your project here (optional).
-
 ### Completed Features
 
 - [ ] User can create a task using the input field and button 
