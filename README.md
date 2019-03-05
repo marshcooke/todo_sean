@@ -8,9 +8,9 @@ This type of application is very common to tackle when learning a new language, 
 
 [ ] Whenever a Task is created, the front end should refresh to show all tasks that need to be completed. 
 
-[ ] Each Task should have an option to "Complete". 
+[X] Each Task should have an option to "Complete". 
 
-[ ] Each Task should have an option to "Delete". 
+[X] Each Task should have an option to "Delete". 
 
 [ ] When a Task is complete, its visual representation should change on the front end. (For example, the background of the task container could change from gray to green.) The complete option should be checked off. Each of these are accomplished in CSS, but will need to hook into logic to know whether or not the task is complete. 
 
@@ -22,7 +22,7 @@ This type of application is very common to tackle when learning a new language, 
 
 [X] Include a database.sql file in your repo that includes CREATE TABLE queries.
 
-[ ] Adjust logic so that completed tasks are brought to the bottom of the page, where the remaining tasks left to complete are brought to the top of the list.
+[X] Adjust logic so that completed tasks are brought to the bottom of the page, where the remaining tasks left to complete are brought to the top of the list.
 
 [ ] In whatever fashion you would like, create an "are you sure: yes / no" option when deleting a task.
 
