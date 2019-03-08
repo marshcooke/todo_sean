@@ -57,29 +57,21 @@ router.get('/home', function (req, res) {
   }
 });
 
-router.post('/', function (req, res) {
+router.post('/home', function (req, res) {
   if (req.isAuthenticated()) {
     var userId = req.user.id;
+    console.log('user id? ', userId.id);
     var tasksId = req.body[0].id;
-    // var newTask = {
-    //   task: req.body[0].id,
-    //   complete: req.body.complete
-    // };
-    // console.log('new task: ', newTask);
-    console.log('in post / function, req.body: ', req.body);
-    // console.log('in post function userId: ',userId, 'tasksId: ', tasksId);
+    console.log('task id?, req.body: ', req.body[0].id);
+    var tasksName = req.body;
+    console.log('task id?, req.body: ', req.body);
     pool.connect(function (connectionError, client, done) {
       if (connectionError) {
         console.log(connectionError);
         res.sendStatus(500);
       } else {
-        var queryString = 'INSERT INTO users_tasks (users_id, tasks_id) VALUES ($1, $2) RETURNING tasks_id;';
-        // var newTask = {
-        //   task: req.body.task,
-        //   complete: req.body.complete
-        // };
-        // console.log('new task: ', newTask);
-        var values = [userId, tasksId];
+        var queryString = 'INSERT INTO tasks (id, task, complete) VALUES ($2, $3, false) WHERE users_tasks (users_id, tasks_id) VALUES ($1, $2) RETURNING tasks_id;';
+        var values = [userId, tasksId, tasksName];
         client.query(queryString, values, function (queryError, resultsObj) {
           done();
           if (queryError) {
