@@ -55,9 +55,7 @@ passport.use('local', new localStrategy({
         client.query("SELECT * FROM users WHERE username = $1", [username],
           function(err, result) {
             var user = {};
-
-            console.log('here');
-
+            
             // Handle Errors
             if (err) {
               console.log('connection err ', err);
