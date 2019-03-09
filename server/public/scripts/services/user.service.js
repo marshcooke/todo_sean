@@ -3,9 +3,7 @@ myApp.service('UserService', function ($http, $location) {
   var self = this;
 
   self.userObject = {};
-  self.allTasksObj = {
-    task: []
-  };
+  self.allTasksObj = { task: [] };
 
   self.getuser = function () {
     $http.get('/home').then(function (response) {
