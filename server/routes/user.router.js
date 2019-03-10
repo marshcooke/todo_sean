@@ -70,7 +70,7 @@ router.post('/home', function (req, res) {
         console.log(connectionError);
         res.sendStatus(500);
       } else {
-        var queryString = 'INSERT INTO tasks (id, task, complete) VALUES ($2, $3, false) WHERE users_tasks (users_id, tasks_id) VALUES ($1, $2) RETURNING tasks_id;';
+        var queryString = 'INSERT INTO users_tasks (users_id, tasks_id) VALUES ($1, $2) WHERE tasks (tasks_id, task, complete) VALUES ($2, $3, false) RETURNING tasks_id;';
         var values = [userId, tasksId, tasksName];
         client.query(queryString, values, function (queryError, resultsObj) {
           done();
