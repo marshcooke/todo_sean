@@ -9,7 +9,6 @@ router.get('/', function (req, res) {
   // check if logged in
   if (req.isAuthenticated()) {
     // send back user object from database
-    // console.log('logged in', req.user);
     var userInfo = {
       username: req.user.username
     };
@@ -33,7 +32,6 @@ router.get('/logout', function (req, res) {
 router.get('/home', function (req, res) {
   if (req.isAuthenticated()) {
     var userId = req.user.id;
-    // console.log('user id?', userId);
     pool.connect(function (connectionError, client, done) {
       if (connectionError) {
         console.log(connectionError);
@@ -45,7 +43,6 @@ router.get('/home', function (req, res) {
             console.log(queryError);
             res.sendStatus(500);
           } else {
-            // console.log('resultsObj.rows: ', resultsObj.rows);
             res.send(resultsObj.rows);
           }
         });
