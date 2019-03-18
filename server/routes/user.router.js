@@ -54,18 +54,18 @@ router.get('/home', function (req, res) {
   }
 });
 
-router.post('/home', function (req, res) {
+router.post('/', function (req, res) {
   if (req.isAuthenticated()) {
     var userId = req.user.id;
     console.log('user is logged in', req.user.id);
-    var tasksId = req.body[0];
-    console.log('task id?, req.body: ', req.body[0]);
+    var tasksId = req.body.task;
+    console.log('task id?, req.body: ', req.body.task);
     pool.connect(function (connectionError, client, done) {
       if (connectionError) {
         console.log(connectionError);
         res.sendStatus(500);
       } else {
-        var queryString = 'INSERT INTO users_tasks (users_id, tasks_id) VALUES ($1, $2) RETURNING tasks_id;';
+        var queryString = 'INSERT INTO users_tasks (users_id) VALUES ($1) RETURNING users_id;';
         var values = [userId, tasksId];
         client.query(queryString, values, function (queryError, resultsObj) {
           done();
