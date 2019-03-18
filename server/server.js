@@ -10,7 +10,7 @@ var indexRouter = require('./routes/index.router');
 var userRouter = require('./routes/user.router');
 var registerRouter = require('./routes/register.router');
 
-var port = process.env.PORT || 5557;
+var port = process.env.PORT || 5556;
 
 // Body parser middleware
 app.use(bodyParser.json());
