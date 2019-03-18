@@ -45,11 +45,10 @@ myApp.service('UserService', function ($http, $location) {
   self.addTask = function (task) {
     $http({
       method: 'POST',
-      url: '/home',
+      url: '/home/home',
       data: [task]
     }).then(function (response) {
       console.log('post response is: ', response);
-      console.log('post response is: ', response.data);
     });
   }
 

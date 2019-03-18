@@ -57,18 +57,16 @@ router.get('/home', function (req, res) {
 router.post('/home', function (req, res) {
   if (req.isAuthenticated()) {
     var userId = req.user.id;
-    console.log('user id? ', userId.id);
-    var tasksId = req.body[0].id;
-    console.log('task id?, req.body: ', req.body[0].id);
-    var tasksName = req.body;
-    console.log('task id?, req.body: ', req.body);
+    console.log('user is logged in', req.user.id);
+    var tasksId = req.body[0];
+    console.log('task id?, req.body: ', req.body[0]);
     pool.connect(function (connectionError, client, done) {
       if (connectionError) {
         console.log(connectionError);
         res.sendStatus(500);
       } else {
-        var queryString = 'INSERT INTO users_tasks (users_id, tasks_id) VALUES ($1, $2) WHERE tasks (id, task, complete) VALUES ($2, $3, false) RETURNING tasks.id;';
-        var values = [userId, tasksId, tasksName];
+        var queryString = 'INSERT INTO users_tasks (users_id, tasks_id) VALUES ($1, $2) RETURNING tasks_id;';
+        var values = [userId, tasksId];
         client.query(queryString, values, function (queryError, resultsObj) {
           done();
           if (queryError) {
