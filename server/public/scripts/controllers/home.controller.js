@@ -18,16 +18,17 @@ myApp.controller('HomeController', function (UserService) {
     vm.getTasks();
   }
 
-  vm.incompleteTask = function (task) {
-    UserService.incompleteTask(task);
-    console.log('change from incomplete to complete');
-    vm.getTasks();
-  }
+  // THESE CAN BE ADDED BACK IN WHEN THE HANDLERS ARE ACTUALLY ENABLED/SET UP
+  // vm.incompleteTask = function (task) {
+  //   UserService.incompleteTask(task);
+  //   console.log('change from incomplete to complete');
+  //   vm.getTasks();
+  // }
 
-  vm.completeTask = function (task) {
-    UserService.completeTask(task);
-    console.log('change from complete to incomplete');
-    vm.getTasks();
-  }
+  // vm.completeTask = function (task) {
+  //   UserService.completeTask(task);
+  //   console.log('change from complete to incomplete');
+  //   vm.getTasks();
+  // }
 
 });
