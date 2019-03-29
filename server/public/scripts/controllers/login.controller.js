@@ -18,11 +18,11 @@ myApp.controller('LoginController', function ($http, $location, UserService) {
           // location works with SPA (ng-route)
           $location.path('/home'); // http://localhost:5556/#/home
         } else {
-          console.log('LoginController -- login -- failure: ', response);
+          // console.log('LoginController -- login -- failure: ', response);
           vm.message = "Wrong!";
         }
       }).catch(function (response) {
-        console.log('LoginController -- registerUser -- failure: ', response);
+        // console.log('LoginController -- registerUser -- failure: ', response);
         vm.message = "Wrong!";
       });
     }
@@ -32,12 +32,12 @@ myApp.controller('LoginController', function ($http, $location, UserService) {
     if (vm.user.username === '' || vm.user.password === '') {
       vm.message = "Choose a username and password!";
     } else {
-      console.log('LoginController -- registerUser -- sending to server...', vm.user);
+      // console.log('LoginController -- registerUser -- sending to server...', vm.user);
       $http.post('/register', vm.user).then(function (response) {
-        console.log('LoginController -- registerUser -- success');
+        // console.log('LoginController -- registerUser -- success');
         $location.path('/login');
       }).catch(function (response) {
-        console.log('LoginController -- registerUser -- error');
+        // console.log('LoginController -- registerUser -- error');
         vm.message = "Please try again."
       });
     }
